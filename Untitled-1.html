@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTML File Example</title>
+
+    <style>
+        :root {
+            --bg: #f7f7fb;
+            --card: #fff;
+            --text: #111827;
+            --accent: #2563eb;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+        }
+        header {
+            background: linear-gradient(90deg,#ffffff88,#f0f4ff88);
+            padding: 1rem;
+            border-bottom: 1px solid #e6e9ef;
+        }
+        .container { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
+        .card {
+            background: var(--card);
+            border: 1px solid #e6e9ef;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+        }
+        nav { display: flex; gap: .5rem; align-items: center; }
+        a.button {
+            text-decoration: none;
+            color: white;
+            background: var(--accent);
+            padding: .45rem .75rem;
+            border-radius: 6px;
+            font-size: .9rem;
+        }
+        .grid { display: grid; grid-template-columns: 1fr 280px; gap: 1rem; align-items: start; }
+        @media (max-width: 760px) {
+            .grid { grid-template-columns: 1fr; }
+            nav { justify-content: space-between; }
+        }
+        footer { text-align: center; padding: 1rem 0; color: #6b7280; font-size: .9rem; }
+        pre { background:#0f1724; color:#e6eef8; padding:.75rem; border-radius:6px; overflow:auto; font-size:.9rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <strong>Example Site</strong>
+                <div style="font-size:.85rem;color:#6b7280;">A minimal HTML template</div>
+            </div>
+            <nav>
+                <a class="button" href="#">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="grid">
+            <div>
+                <article class="card">
+                    <h1>HTML File Example</h1>
+                    <p>This is a simple, responsive HTML template you can use as a starting point. It includes accessible structure, a responsive grid, and a small code sample below.</p>
+
+                    <h2>Usage</h2>
+                    <ol>
+                        <li>Save this file as <code>index.html</code>.</li>
+                        <li>Open it in a browser.</li>
+                        <li>Modify content, styles, and scripts as needed.</li>
+                    </ol>
+
+                    <h2>Inline example</h2>
+                    <pre>&lt;!-- Save as index.html and open in browser --&gt;</pre>
+                </article>
+            </div>
+
+            <aside class="card">
+                <h3>Quick info</h3>
+                <p style="margin:0 .25rem .5rem 0;color:#374151;">Viewport meta, charset, and responsive CSS are included. Replace or expand as needed.</p>
+                <hr />
+                <p style="font-size:.85rem;color:#6b7280;margin:0;">Author: Template</p>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        © Example — Minimal HTML template
+    </footer>
+
+    <script>
+        // Small helper: toggle a "night" theme when pressing "n"
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'n') {
+                document.documentElement.style.setProperty('--bg', getComputedStyle(document.documentElement).getPropertyValue('--bg').includes('#0') ? '#f7f7fb' : '#0b1220');
+                document.documentElement.style.setProperty('--card', getComputedStyle(document.documentElement).getPropertyValue('--card').includes('#0') ? '#fff' : '#071024');
+                document.documentElement.style.setProperty('--text', getComputedStyle(document.documentElement).getPropertyValue('--text').includes('#1') ? '#e6eef8' : '#111827');
+            }
+        });
+    </script>
+</body>
+</html>
